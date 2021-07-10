@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://components/TextEdit.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.054902, 0.054902, 0.054902, 1 )
+anti_aliasing_size = 5
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.556863, 0.556863, 0.556863, 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 1705.67, 497.188 )
+custom_styles/normal = SubResource( 1 )
+custom_styles/completion = SubResource( 2 )
+text = "https://github.com/GameDevBhavesh/VisualGodioCode
+https://github.com/GameDevBhavesh/VisualGodioCode
+https://github.com/GameDevBhavesh/VisualGodioCode
+https://github.com/GameDevBhavesh/VisualGodioCode
+https://github.com/GameDevBhavesh/VisualGodioCode
+"
+highlight_current_line = true
+syntax_highlighting = true
+show_line_numbers = true
+draw_tabs = true
+draw_spaces = true
+breakpoint_gutter = true
+fold_gutter = true
+highlight_all_occurrences = true
+override_selected_font_color = true
+smooth_scrolling = true
+hiding_enabled = true
+minimap_draw = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="text_changed" from="TextEdit" to="TextEdit" method="_on_TextEdit_text_changed"]
