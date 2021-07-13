@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_FolderDialog_dir_selected(dir):
-	var fileView = $Panel/ContentWindow/LeftBar/FilesView/VSplitContainer/Current
+	var fileView = $Panel/ContentWindow/LeftBar/FilesView/VSplitContainer/FolderFiles
 	fileView.clear()
 	print(dir)
 	var folder = Directory.new()
@@ -27,15 +27,17 @@ func _on_FolderDialog_dir_selected(dir):
 		
 		var file_name = folder.get_next()
 		var index=0;
-		var current_item_path = folder.get_current_dir()+"/"+file_name
+		
 		while file_name != "":
 			if folder.current_is_dir():
 				print("Found directory: " + file_name)
 			else:
 				print("Found file: " + file_name)
-				var item = $Panel/ContentWindow/LeftBar/FilesView/VSplitContainer/Current.create_item()
+				var current_item_path = folder.get_current_dir()+"/"+file_name
+				var item = $Panel/ContentWindow/LeftBar/FilesView/VSplitContainer/FolderFiles.create_item()
 				item.set_text(0,file_name)
-				item.add_button(0,null)
+				item.set_selectable(0,true)
+				item.set_metadata(0,current_item_path)
 			
 				index+=1
 			file_name = folder.get_next()
@@ -73,13 +75,3 @@ func _on_FileDialog_file_selected(path):
 		item.set_text(0,path)
 		item.add_button(0,null)
 		$Panel/ContentWindow/ActionPanel/VSplitContainer/TabContainer/EditArea.text =  file.get_as_text()
-
-
-
-func _on_Current_button_pressed(item, column, id):
-		print(item) 
-
-
-
-func _on_Current_item_selected():
-	pass # Replace with function body.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://fonts/Rubik-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Images/file.svg" type="Texture" id=2]
@@ -7,17 +7,18 @@
 [ext_resource path="res://Images/logoVGC.png" type="Texture" id=5]
 [ext_resource path="res://scripts/Topbar.gd" type="Script" id=6]
 [ext_resource path="res://scripts/main.gd" type="Script" id=7]
+[ext_resource path="res://FileExplorerTree.gd" type="Script" id=8]
+[ext_resource path="res://TabManager.gd" type="Script" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
 
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.141176, 0.141176, 0.141176, 1 )
+[sub_resource type="ButtonGroup" id=20]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
 
-[sub_resource type="StyleBoxFlat" id=19]
+[sub_resource type="StyleBoxFlat" id=3]
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
@@ -31,44 +32,44 @@ bg_color = Color( 0.156863, 0.152941, 0.152941, 1 )
 [sub_resource type="StyleBoxFlat" id=7]
 
 [sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.054902, 0.054902, 0.054902, 1 )
 
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )
+[sub_resource type="DynamicFont" id=9]
+size = 38
+outline_size = 1
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=10]
+size = 19
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.0927858, 0.49767, 0.772461, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.0156863, 0.364706, 0.709804, 1 )
+
+[sub_resource type="DynamicFont" id=13]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )
+
+[sub_resource type="DynamicFont" id=16]
 size = 15
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=11]
-bg_color = Color( 0.054902, 0.054902, 0.054902, 1 )
-
-[sub_resource type="DynamicFont" id=12]
-size = 38
-outline_size = 1
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=13]
-size = 19
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=14]
-bg_color = Color( 0.0927858, 0.49767, 0.772461, 1 )
-
-[sub_resource type="StyleBoxFlat" id=15]
-bg_color = Color( 0.0156863, 0.364706, 0.709804, 1 )
-
-[sub_resource type="DynamicFont" id=16]
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=20]
+[sub_resource type="StyleBoxFlat" id=17]
 bg_color = Color( 0.00784314, 0.00784314, 0.00784314, 1 )
 
-[sub_resource type="StyleBoxFlat" id=17]
+[sub_resource type="StyleBoxFlat" id=18]
 bg_color = Color( 0.25098, 0.25098, 0.25098, 1 )
 
-[sub_resource type="StyleBoxFlat" id=18]
+[sub_resource type="StyleBoxFlat" id=19]
 bg_color = Color( 0.0901961, 0.462745, 0.737255, 1 )
 
 [node name="Control" type="Control"]
@@ -100,7 +101,7 @@ __meta__ = {
 }
 
 [node name="LeftBar" type="HBoxContainer" parent="Panel/ContentWindow"]
-margin_right = 174.0
+margin_right = 179.0
 margin_bottom = 545.0
 grow_horizontal = 2
 mouse_default_cursor_shape = 2
@@ -108,50 +109,68 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LeftMenu" type="Panel" parent="Panel/ContentWindow/LeftBar"]
-margin_right = 50.0
+[node name="LeftMenu" type="VBoxContainer" parent="Panel/ContentWindow/LeftBar"]
+margin_right = 55.0
 margin_bottom = 545.0
-rect_min_size = Vector2( 50, 0 )
-custom_styles/panel = SubResource( 2 )
+grow_vertical = 2
+rect_min_size = Vector2( 55, 0 )
 
 [node name="TextureButton" type="TextureButton" parent="Panel/ContentWindow/LeftBar/LeftMenu"]
-anchor_left = 0.26
-anchor_top = 0.0513761
-anchor_right = 0.728
-anchor_bottom = 0.0943119
-margin_right = 9.59998
-margin_bottom = 9.6
-rect_scale = Vector2( 0.8, 0.8 )
+margin_right = 55.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 0, 55 )
+size_flags_horizontal = 5
+size_flags_vertical = 4
+toggle_mode = true
+group = SubResource( 20 )
 texture_normal = ExtResource( 2 )
 expand = true
+stretch_mode = 3
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
 [node name="TextureButton2" type="TextureButton" parent="Panel/ContentWindow/LeftBar/LeftMenu"]
-anchor_left = 0.093084
-anchor_top = 0.155301
-anchor_right = 0.925
-anchor_bottom = 0.231631
-margin_left = 35.3458
-margin_top = 6.3612
-margin_right = 28.75
-margin_bottom = -0.238968
-rect_scale = Vector2( -0.8, 0.8 )
+margin_top = 59.0
+margin_right = 55.0
+margin_bottom = 114.0
+rect_min_size = Vector2( 0, 55 )
+size_flags_horizontal = 5
+size_flags_vertical = 4
+toggle_mode = true
+group = SubResource( 20 )
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 4 )
 expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton3" type="TextureButton" parent="Panel/ContentWindow/LeftBar/LeftMenu"]
+margin_top = 118.0
+margin_right = 55.0
+margin_bottom = 173.0
+rect_min_size = Vector2( 0, 55 )
+size_flags_horizontal = 5
+size_flags_vertical = 4
+toggle_mode = true
+group = SubResource( 20 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+expand = true
+stretch_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="FilesView" type="Panel" parent="Panel/ContentWindow/LeftBar"]
-margin_left = 54.0
-margin_right = 174.0
+margin_left = 59.0
+margin_right = 179.0
 margin_bottom = 545.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 2 )
 
 [node name="Title" type="Label" parent="Panel/ContentWindow/LeftBar/FilesView"]
 anchor_top = 0.00366972
@@ -169,13 +188,13 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 24.0
-custom_styles/bg = SubResource( 19 )
+custom_styles/bg = SubResource( 3 )
 split_offset = -200
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Outside" type="Tree" parent="Panel/ContentWindow/LeftBar/FilesView/VSplitContainer"]
+[node name="OpenedFiles" type="Tree" parent="Panel/ContentWindow/LeftBar/FilesView/VSplitContainer"]
 margin_right = 120.0
 margin_bottom = 54.0
 mouse_default_cursor_shape = 2
@@ -187,21 +206,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Current" type="Tree" parent="Panel/ContentWindow/LeftBar/FilesView/VSplitContainer"]
+[node name="FolderFiles" type="Tree" parent="Panel/ContentWindow/LeftBar/FilesView/VSplitContainer"]
 margin_top = 66.0
 margin_right = 120.0
 margin_bottom = 521.0
 mouse_default_cursor_shape = 2
 size_flags_vertical = 3
 custom_styles/bg = SubResource( 4 )
-allow_reselect = true
 select_mode = 2
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ActionPanel" type="Panel" parent="Panel/ContentWindow"]
-margin_left = 192.0
+margin_left = 197.0
 margin_right = 1024.0
 margin_bottom = 545.0
 rect_min_size = Vector2( 0, 30 )
@@ -218,7 +237,7 @@ __meta__ = {
 }
 
 [node name="TabContainer" type="TabContainer" parent="Panel/ContentWindow/ActionPanel/VSplitContainer"]
-margin_right = 832.0
+margin_right = 827.0
 margin_bottom = 465.0
 mouse_default_cursor_shape = 2
 custom_styles/tab_fg = SubResource( 6 )
@@ -226,18 +245,73 @@ custom_styles/panel = SubResource( 7 )
 custom_constants/side_margin = 5
 tab_align = 0
 drag_to_rearrange_enabled = true
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+folderFiles = NodePath("../../../LeftBar/FilesView/VSplitContainer/FolderFiles")
+
+[node name="Panel" type="Panel" parent="Panel/ContentWindow/ActionPanel/VSplitContainer/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 8 )
+
+[node name="Label" type="Label" parent="Panel/ContentWindow/ActionPanel/VSplitContainer/TabContainer/Panel"]
+anchor_left = 0.223558
+anchor_top = 0.199546
+anchor_right = 0.637019
+anchor_bottom = 0.451247
+custom_fonts/font = SubResource( 9 )
+text = "Getiing started"
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label2" type="Label" parent="Panel/ContentWindow/ActionPanel/VSplitContainer/TabContainer/Panel"]
+anchor_left = 0.223558
+anchor_top = 0.417234
+anchor_right = 0.637019
+anchor_bottom = 0.773243
+custom_fonts/font = SubResource( 10 )
+text = "Your own code editor.
+You can personalize theme.
+Open multiple files.
+Open any folder
+Find out more about VGCode"
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button" type="Button" parent="Panel/ContentWindow/ActionPanel/VSplitContainer/TabContainer/Panel"]
+anchor_left = 0.551769
+anchor_top = 0.655884
+anchor_right = 0.651529
+anchor_bottom = 0.701236
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
+text = "Here."
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="EditArea" type="TextEdit" parent="Panel/ContentWindow/ActionPanel/VSplitContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 24.0
 size_flags_vertical = 3
-custom_styles/read_only = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
-custom_fonts/font = SubResource( 10 )
+custom_styles/read_only = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+custom_fonts/font = SubResource( 16 )
 custom_constants/completion_max_width = 0
 custom_constants/completion_scroll_width = 0
 text = "{
@@ -297,188 +371,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="Panel/ContentWindow/ActionPanel/VSplitContainer/TabContainer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 24.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/panel = SubResource( 11 )
-
-[node name="Label" type="Label" parent="Panel/ContentWindow/ActionPanel/VSplitContainer/TabContainer/Panel"]
-anchor_left = 0.223558
-anchor_top = 0.199546
-anchor_right = 0.637019
-anchor_bottom = 0.451247
-custom_fonts/font = SubResource( 12 )
-text = "Getiing started"
-valign = 1
-autowrap = true
-clip_text = true
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Label2" type="Label" parent="Panel/ContentWindow/ActionPanel/VSplitContainer/TabContainer/Panel"]
-anchor_left = 0.223558
-anchor_top = 0.417234
-anchor_right = 0.637019
-anchor_bottom = 0.773243
-custom_fonts/font = SubResource( 13 )
-text = "Your own code editor.
-You can personalize theme.
-Open multiple files.
-Open any folder
-Find out more about VGCode"
-autowrap = true
-clip_text = true
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Button" type="Button" parent="Panel/ContentWindow/ActionPanel/VSplitContainer/TabContainer/Panel"]
-anchor_left = 0.551769
-anchor_top = 0.655884
-anchor_right = 0.651529
-anchor_bottom = 0.701236
-custom_styles/pressed = SubResource( 14 )
-custom_styles/normal = SubResource( 15 )
-custom_fonts/font = SubResource( 16 )
-text = "Here."
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="EditArea2" type="TextEdit" parent="Panel/ContentWindow/ActionPanel/VSplitContainer/TabContainer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 24.0
-size_flags_vertical = 3
-custom_styles/read_only = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
-text = "{
-    \"quiz\": {
-        \"sport\": {
-            \"q1\": {
-                \"question\": \"Which one is correct team name in NBA?\",
-                \"options\": [
-                    \"New York Bulls\",
-                    \"Los Angeles Kings\",
-                    \"Golden State Warriros\",
-                    \"Huston Rocket\"
-                ],
-                \"answer\": \"Huston Rocket\"
-            }
-        },
-        \"maths\": {
-            \"q1\": {
-                \"question\": \"5 + 7 = ?\",
-                \"options\": [
-                    \"10\",
-                    \"11\",
-                    \"12\",
-                    \"13\"
-                ],
-                \"answer\": \"12\"
-            },
-            \"q2\": {
-                \"question\": \"12 - 8 = ?\",
-                \"options\": [
-                    \"1\",
-                    \"2\",
-                    \"3\",
-                    \"4\"
-                ],
-                \"answer\": \"4\"
-            }
-        }
-    }
-}"
-highlight_current_line = true
-syntax_highlighting = true
-show_line_numbers = true
-draw_tabs = true
-draw_spaces = true
-breakpoint_gutter = true
-fold_gutter = true
-highlight_all_occurrences = true
-override_selected_font_color = true
-smooth_scrolling = true
-minimap_draw = true
-minimap_width = 101
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="EditArea3" type="TextEdit" parent="Panel/ContentWindow/ActionPanel/VSplitContainer/TabContainer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 24.0
-size_flags_vertical = 3
-custom_styles/read_only = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
-text = "{
-    \"quiz\": {
-        \"sport\": {
-            \"q1\": {
-                \"question\": \"Which one is correct team name in NBA?\",
-                \"options\": [
-                    \"New York Bulls\",
-                    \"Los Angeles Kings\",
-                    \"Golden State Warriros\",
-                    \"Huston Rocket\"
-                ],
-                \"answer\": \"Huston Rocket\"
-            }
-        },
-        \"maths\": {
-            \"q1\": {
-                \"question\": \"5 + 7 = ?\",
-                \"options\": [
-                    \"10\",
-                    \"11\",
-                    \"12\",
-                    \"13\"
-                ],
-                \"answer\": \"12\"
-            },
-            \"q2\": {
-                \"question\": \"12 - 8 = ?\",
-                \"options\": [
-                    \"1\",
-                    \"2\",
-                    \"3\",
-                    \"4\"
-                ],
-                \"answer\": \"4\"
-            }
-        }
-    }
-}"
-highlight_current_line = true
-syntax_highlighting = true
-show_line_numbers = true
-draw_tabs = true
-draw_spaces = true
-breakpoint_gutter = true
-fold_gutter = true
-highlight_all_occurrences = true
-override_selected_font_color = true
-smooth_scrolling = true
-minimap_draw = true
-minimap_width = 101
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Terminal" type="TextEdit" parent="Panel/ContentWindow/ActionPanel/VSplitContainer"]
 margin_top = 477.0
-margin_right = 832.0
+margin_right = 827.0
 margin_bottom = 545.0
-custom_styles/normal = SubResource( 20 )
+custom_styles/normal = SubResource( 17 )
 text = "c:/user/test"
 syntax_highlighting = true
 fold_gutter = true
@@ -488,7 +385,7 @@ virtual_keyboard_enabled = false
 anchor_right = 1.0
 margin_bottom = 30.0
 mouse_default_cursor_shape = 13
-custom_styles/panel = SubResource( 17 )
+custom_styles/panel = SubResource( 18 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -646,13 +543,17 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -25.0
-custom_styles/panel = SubResource( 18 )
+custom_styles/panel = SubResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [connection signal="ready" from="." to="." method="_on_Control_ready"]
-[connection signal="button_pressed" from="Panel/ContentWindow/LeftBar/FilesView/VSplitContainer/Current" to="." method="_on_Current_button_pressed"]
+[connection signal="cell_selected" from="Panel/ContentWindow/LeftBar/FilesView/VSplitContainer/FolderFiles" to="Panel/ContentWindow/LeftBar/FilesView/VSplitContainer/FolderFiles" method="_on_FolderFiles_cell_selected"]
+[connection signal="item_activated" from="Panel/ContentWindow/LeftBar/FilesView/VSplitContainer/FolderFiles" to="Panel/ContentWindow/LeftBar/FilesView/VSplitContainer/FolderFiles" method="_on_FolderFiles_item_activated"]
+[connection signal="item_double_clicked" from="Panel/ContentWindow/LeftBar/FilesView/VSplitContainer/FolderFiles" to="Panel/ContentWindow/LeftBar/FilesView/VSplitContainer/FolderFiles" method="_on_FolderFiles_item_double_clicked"]
+[connection signal="item_selected" from="Panel/ContentWindow/LeftBar/FilesView/VSplitContainer/FolderFiles" to="Panel/ContentWindow/LeftBar/FilesView/VSplitContainer/FolderFiles" method="_on_FolderFiles_item_selected"]
+[connection signal="ready" from="Panel/ContentWindow/LeftBar/FilesView/VSplitContainer/FolderFiles" to="Panel/ContentWindow/LeftBar/FilesView/VSplitContainer/FolderFiles" method="_on_FolderFiles_ready"]
 [connection signal="ready" from="Panel/Topbar" to="Panel/Topbar" method="_on_Topbar_ready"]
 [connection signal="button_down" from="Panel/Topbar/HBoxContainer/File" to="Panel/Topbar" method="_on_MenuButton2_button_down"]
 [connection signal="button_down" from="Panel/Topbar/HBoxContainer/edit" to="Panel/Topbar" method="_on_MenuButton2_button_down"]
