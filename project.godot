@@ -1,0 +1,83 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+[application]
+
+config/name="SastaVsCode"
+config/description="vs code but sasta"
+run/main_scene="res://main.tscn"
+run/low_processor_mode=true
+run/low_processor_mode_sleep_usec=3000
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+config/icon="res://Images/icon.png"
+
+[display]
+
+window/dpi/allow_hidpi=true
+
+[global]
+
+border=true
+
+[memory]
+
+limits/multithreaded_server/rid_pool_prealloc=50
+
+[physics]
+
+common/enable_pause_aware_picking=true
+3d/active_soft_world=false
+3d/godot_physics/use_bvh=false
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+quality/driver/fallback_to_gles2=true
+2d/options/use_nvidia_rect_flicker_workaround=true
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
+threads/thread_model=2
+limits/time/time_rollover_secs=0.0
+quality/directional_shadow/size=256
+quality/directional_shadow/size.mobile=256
+quality/shadow_atlas/size=256
+quality/shadow_atlas/size.mobile=256
+quality/shadow_atlas/cubemap_size=64
+quality/shadow_atlas/quadrant_0_subdiv=0
+quality/shadow_atlas/quadrant_1_subdiv=0
+quality/shadow_atlas/quadrant_2_subdiv=0
+quality/shadow_atlas/quadrant_3_subdiv=0
+quality/shadows/filter_mode=0
+quality/reflections/texture_array_reflections=false
+quality/reflections/high_quality_ggx=false
+quality/reflections/irradiance_max_size=32
+quality/skinning/software_skinning_fallback=false
+batching/options/single_rect_fallback=true
+batching/parameters/colored_vertex_format_threshold=0.12
+batching/lights/scissor_area_threshold=0.0
+quality/lightmapping/use_bicubic_sampling=false
+limits/buffers/canvas_polygon_buffer_size_kb=0
+limits/buffers/canvas_polygon_index_buffer_size_kb=0
+limits/buffers/immediate_buffer_size_kb=0
+cpu_lightmapper/quality/low_quality_ray_count=0
+cpu_lightmapper/quality/medium_quality_ray_count=0
+cpu_lightmapper/quality/high_quality_ray_count=0
+cpu_lightmapper/quality/ultra_quality_ray_count=0
+quality/reflections/atlas_size=0
+quality/depth/hdr=false
+environment/default_environment="res://default_env.tres"
+quality/dynamic_fonts/use_oversampling=false
+limits/buffers/blend_shape_max_buffer_size_kb=0
+limits/rendering/max_renderable_elements=1024
+limits/rendering/max_renderable_lights=16
+limits/rendering/max_renderable_reflections=8
+limits/rendering/max_lights_per_object=8
+quality/subsurface_scattering/quality=0
