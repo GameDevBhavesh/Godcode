@@ -18,7 +18,7 @@ func _item_selected():
 		print("selected "+filePath)
 		var file =File.new()
 		file.open(filePath,1)
-		$"../../../../ActionPanel/VSplitContainer/TabContainer/EditArea".text=file.get_as_text()
+		$"../../../../ViewportPanel/VSplitContainer/TabContainer/EditArea".text=file.get_as_text()
 	pass
 
 func _dubble_click():

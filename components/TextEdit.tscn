@@ -1,0 +1,133 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://components/TextEdit.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )
+
+[node name="TextEdit" type="TextEdit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/normal = SubResource( 1 )
+text = "using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Colyseus;
+using Colyseus.Schema;
+using Proyecto26.Common;
+using Proyecto26;
+using Models;
+using UnityEngine.SceneManagement;
+
+
+public class BotClient : MonoBehaviour
+{
+    Client client;
+    public static BotClient _Instance;
+    public Room<State> currentRoom;
+    void Awake()
+    {
+        if (!BotClient._Instance)
+        {
+            BotClient._Instance = this;
+            Object.DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    private void Start()
+    {
+        ConnectBot();
+    }
+    public async void Send(object msg)
+    {
+        if (msg is Message)
+        {
+            if (currentRoom != null)
+            {
+                await currentRoom.Send(\"*\", msg);
+            }
+        }
+    }
+    public async  void ConnectBot()
+    {
+        // Dictionary<string, string> headers = new Dictionary<string, string>();
+        // headers.Add(\"authorization\", \"JWT \" + PlayerPrefs.GetString(\"token\"));
+        // headers.Add(\"apisecret\", MainUrls.APP_SECRET);
+
+        // var currentRequest = new RequestHelper
+        // {
+        //     Headers = headers,
+        //     Uri = MainUrls.BASE_URL + \"/get-bot\",
+        //     Body = new playernotfound
+        //     {
+        //         costofroom = GameClient._Instance.roomconfig.roomName,
+        //         numberofplayers = GameClient._Instance.roomconfig.maxPlayers
+        //     }
+        // };
+        //  RestClient.Get<uploadres>(currentRequest).Then(async (res) =>
+        // {
+        //     if (res.errorvalue)
+        //     {
+        //         GameEvents.notify_event_invoke(\"Failed finding players! \", Color.red);
+        //     }
+        //     else
+        //     {
+                // GameEvents.notify_event_invoke(\"Searching for two player board\",Color.green);
+                // PlayerPrefs.SetString(\"botName\",\"testbot\");
+                // PlayerPrefs.SetInt(\"botLevel\",1);
+                // PlayerPrefs.SetInt(\"bot\",1);
+                // PlayerPrefs.Save();
+                // SceneManager.LoadScene(\"2player\");'
+
+                PlayerPrefs.SetString(\"botName\",\"botv1\");
+                PlayerPrefs.SetInt(\"botLevel\",1);
+                PlayerPrefs.SetString(\"max_players\",\"bot\");
+                PlayerPrefs.Save();
+                client = ColyseusManager.Instance.CreateClient(MainUrls.SOCKET_URL);
+       
+                var options = new Dictionary<string, object>();
+                var confiq = GameClient._Instance.roomconfig;
+
+                options.Add(\"maxPlayers\", confiq.maxPlayers);
+                options.Add(\"maxClients\", confiq.maxPlayers);
+                options.Add(\"id\", \"5ed4b03b9888ca0b2c144c74\");
+                options.Add(\"room_id\", confiq.roomid);
+                options.Add(\"user_profile\", Random.Range(1, 5));
+                options.Add(\"user_name\", \"Bot.v1\");
+                options.Add(\"fee\", confiq.roomName);
+                options.Add(\"win\", confiq.total);
+
+                Debug.Log(\" bot room name \"+GameClient._Instance.roomconfig.roomName);
+                currentRoom = await client.Create<State>(GameClient._Instance.roomconfig.roomName,options);
+
+                currentRoom.OnMessage<int>(\"turn\",(turn)=>{
+                    
+                });
+
+                GameClient._Instance.roomconfig.col_roomid = currentRoom.Id;
+                GameClient._Instance.ConnectWithBot();
+
+                
+    //         }
+    //     }).Catch(err => GameEvents.notify_event_invoke(\"cant find players at the moment try other rooms\", Color.red));
+    }
+}
+"
+highlight_current_line = true
+syntax_highlighting = true
+show_line_numbers = true
+draw_tabs = true
+draw_spaces = true
+breakpoint_gutter = true
+fold_gutter = true
+highlight_all_occurrences = true
+override_selected_font_color = true
+smooth_scrolling = true
+hiding_enabled = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

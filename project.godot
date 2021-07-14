@@ -15,9 +15,15 @@ config/description="vs code but sasta"
 run/main_scene="res://main.tscn"
 run/low_processor_mode=true
 run/low_processor_mode_sleep_usec=3000
+boot_splash/image="res://Images/logo.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0.12549, 0.145098, 0.192157, 1 )
 config/icon="res://Images/icon.png"
+
+[autoload]
+
+FileData="*res://FileData.gd"
 
 [display]
 
@@ -39,7 +45,6 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 quality/driver/fallback_to_gles2=true
 2d/options/use_nvidia_rect_flicker_workaround=true
 quality/intended_usage/framebuffer_allocation=0
@@ -63,10 +68,16 @@ quality/skinning/software_skinning_fallback=false
 batching/options/single_rect_fallback=true
 batching/parameters/colored_vertex_format_threshold=0.12
 batching/lights/scissor_area_threshold=0.0
+limits/buffers/blend_shape_max_buffer_size_kb=0
 quality/lightmapping/use_bicubic_sampling=false
 limits/buffers/canvas_polygon_buffer_size_kb=0
 limits/buffers/canvas_polygon_index_buffer_size_kb=0
+limits/rendering/max_renderable_elements=1024
+limits/rendering/max_renderable_lights=16
+limits/rendering/max_renderable_reflections=8
+limits/rendering/max_lights_per_object=8
 limits/buffers/immediate_buffer_size_kb=0
+quality/subsurface_scattering/quality=0
 cpu_lightmapper/quality/low_quality_ray_count=0
 cpu_lightmapper/quality/medium_quality_ray_count=0
 cpu_lightmapper/quality/high_quality_ray_count=0
@@ -75,9 +86,3 @@ quality/reflections/atlas_size=0
 quality/depth/hdr=false
 environment/default_environment="res://default_env.tres"
 quality/dynamic_fonts/use_oversampling=false
-limits/buffers/blend_shape_max_buffer_size_kb=0
-limits/rendering/max_renderable_elements=1024
-limits/rendering/max_renderable_lights=16
-limits/rendering/max_renderable_reflections=8
-limits/rendering/max_lights_per_object=8
-quality/subsurface_scattering/quality=0

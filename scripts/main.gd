@@ -49,7 +49,7 @@ pass
 
 func _on_Control_ready():
 	
-	Engine.target_fps= 30
+	Engine.target_fps= 60
 	$Panel/Topbar/HBoxContainer/File.get_popup().connect("id_pressed", self, "file_menu")
 	
 	pass # Replace with function body.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://fonts/Rubik-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Images/file.svg" type="Texture" id=2]
@@ -13,63 +13,67 @@
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
 
-[sub_resource type="ButtonGroup" id=20]
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
+[sub_resource type="ButtonGroup" id=2]
 
 [sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
 
 [sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.156863, 0.152941, 0.152941, 1 )
+bg_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
 
 [sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.156863, 0.152941, 0.152941, 1 )
 
 [sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0.054902, 0.054902, 0.054902, 1 )
-
-[sub_resource type="DynamicFont" id=9]
-size = 38
-outline_size = 1
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=10]
-size = 19
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=11]
-bg_color = Color( 0.0927858, 0.49767, 0.772461, 1 )
-
-[sub_resource type="StyleBoxFlat" id=12]
-bg_color = Color( 0.0156863, 0.364706, 0.709804, 1 )
-
-[sub_resource type="DynamicFont" id=13]
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=14]
 
 [sub_resource type="StyleBoxFlat" id=15]
+
+[sub_resource type="StyleBoxFlat" id=16]
 bg_color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )
 
-[sub_resource type="DynamicFont" id=16]
+[sub_resource type="DynamicFont" id=17]
 size = 15
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=17]
-bg_color = Color( 0.00784314, 0.00784314, 0.00784314, 1 )
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.054902, 0.054902, 0.054902, 1 )
+
+[sub_resource type="StreamTexture" id=21]
+flags = 4
+load_path = "res://.import/icon_monochrome_light.png-b0e9032e5df538fffb52a40b76855cd5.stex"
+
+[sub_resource type="DynamicFont" id=10]
+size = 38
+outline_size = 1
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 19
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.0927858, 0.49767, 0.772461, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.0156863, 0.364706, 0.709804, 1 )
+
+[sub_resource type="DynamicFont" id=14]
+font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=18]
-bg_color = Color( 0.25098, 0.25098, 0.25098, 1 )
+bg_color = Color( 0.00784314, 0.00784314, 0.00784314, 1 )
 
 [sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.25098, 0.25098, 0.25098, 1 )
+
+[sub_resource type="StyleBoxFlat" id=20]
 bg_color = Color( 0.0901961, 0.462745, 0.737255, 1 )
 
 [node name="Control" type="Control"]
@@ -122,7 +126,7 @@ rect_min_size = Vector2( 0, 55 )
 size_flags_horizontal = 5
 size_flags_vertical = 4
 toggle_mode = true
-group = SubResource( 20 )
+group = SubResource( 2 )
 texture_normal = ExtResource( 2 )
 expand = true
 stretch_mode = 3
@@ -138,7 +142,7 @@ rect_min_size = Vector2( 0, 55 )
 size_flags_horizontal = 5
 size_flags_vertical = 4
 toggle_mode = true
-group = SubResource( 20 )
+group = SubResource( 2 )
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 4 )
 expand = true
@@ -155,7 +159,7 @@ rect_min_size = Vector2( 0, 55 )
 size_flags_horizontal = 5
 size_flags_vertical = 4
 toggle_mode = true
-group = SubResource( 20 )
+group = SubResource( 2 )
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 4 )
 expand = true
@@ -170,7 +174,7 @@ margin_right = 179.0
 margin_bottom = 545.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 3 )
 
 [node name="Title" type="Label" parent="Panel/ContentWindow/LeftBar/FilesView"]
 anchor_top = 0.00366972
@@ -188,7 +192,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 24.0
-custom_styles/bg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
 split_offset = -200
 __meta__ = {
 "_edit_use_anchors_": false
@@ -199,7 +203,7 @@ margin_right = 120.0
 margin_bottom = 54.0
 mouse_default_cursor_shape = 2
 size_flags_vertical = 3
-custom_styles/bg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
 allow_reselect = true
 select_mode = 2
 __meta__ = {
@@ -212,21 +216,21 @@ margin_right = 120.0
 margin_bottom = 521.0
 mouse_default_cursor_shape = 2
 size_flags_vertical = 3
-custom_styles/bg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
 select_mode = 2
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ActionPanel" type="Panel" parent="Panel/ContentWindow"]
+[node name="ViewportPanel" type="Panel" parent="Panel/ContentWindow"]
 margin_left = 197.0
 margin_right = 1024.0
 margin_bottom = 545.0
 rect_min_size = Vector2( 0, 30 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 6 )
 
-[node name="VSplitContainer" type="VSplitContainer" parent="Panel/ContentWindow/ActionPanel"]
+[node name="VSplitContainer" type="VSplitContainer" parent="Panel/ContentWindow/ViewportPanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 0, 500 )
@@ -236,12 +240,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TabContainer" type="TabContainer" parent="Panel/ContentWindow/ActionPanel/VSplitContainer"]
+[node name="TabContainer" type="TabContainer" parent="Panel/ContentWindow/ViewportPanel/VSplitContainer"]
 margin_right = 827.0
 margin_bottom = 465.0
 mouse_default_cursor_shape = 2
-custom_styles/tab_fg = SubResource( 6 )
-custom_styles/panel = SubResource( 7 )
+custom_styles/tab_fg = SubResource( 7 )
+custom_styles/panel = SubResource( 8 )
 custom_constants/side_margin = 5
 tab_align = 0
 drag_to_rearrange_enabled = true
@@ -251,67 +255,15 @@ __meta__ = {
 }
 folderFiles = NodePath("../../../LeftBar/FilesView/VSplitContainer/FolderFiles")
 
-[node name="Panel" type="Panel" parent="Panel/ContentWindow/ActionPanel/VSplitContainer/TabContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 24.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/panel = SubResource( 8 )
-
-[node name="Label" type="Label" parent="Panel/ContentWindow/ActionPanel/VSplitContainer/TabContainer/Panel"]
-anchor_left = 0.223558
-anchor_top = 0.199546
-anchor_right = 0.637019
-anchor_bottom = 0.451247
-custom_fonts/font = SubResource( 9 )
-text = "Getiing started"
-valign = 1
-autowrap = true
-clip_text = true
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Label2" type="Label" parent="Panel/ContentWindow/ActionPanel/VSplitContainer/TabContainer/Panel"]
-anchor_left = 0.223558
-anchor_top = 0.417234
-anchor_right = 0.637019
-anchor_bottom = 0.773243
-custom_fonts/font = SubResource( 10 )
-text = "Your own code editor.
-You can personalize theme.
-Open multiple files.
-Open any folder
-Find out more about VGCode"
-autowrap = true
-clip_text = true
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Button" type="Button" parent="Panel/ContentWindow/ActionPanel/VSplitContainer/TabContainer/Panel"]
-anchor_left = 0.551769
-anchor_top = 0.655884
-anchor_right = 0.651529
-anchor_bottom = 0.701236
-custom_styles/pressed = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
-custom_fonts/font = SubResource( 13 )
-text = "Here."
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="EditArea" type="TextEdit" parent="Panel/ContentWindow/ActionPanel/VSplitContainer/TabContainer"]
+[node name="EditArea" type="TextEdit" parent="Panel/ContentWindow/ViewportPanel/VSplitContainer/TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 24.0
 size_flags_vertical = 3
-custom_styles/read_only = SubResource( 14 )
-custom_styles/normal = SubResource( 15 )
-custom_fonts/font = SubResource( 16 )
+custom_styles/read_only = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
 custom_constants/completion_max_width = 0
 custom_constants/completion_scroll_width = 0
 text = "{
@@ -371,11 +323,91 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Terminal" type="TextEdit" parent="Panel/ContentWindow/ActionPanel/VSplitContainer"]
+[node name="nodes" type="Panel" parent="Panel/ContentWindow/ViewportPanel/VSplitContainer/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 9 )
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ContentWindow/ViewportPanel/VSplitContainer/TabContainer/nodes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 21 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GraphEdit" type="GraphEdit" parent="Panel/ContentWindow/ViewportPanel/VSplitContainer/TabContainer/nodes"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+scroll_offset = Vector2( -40, -40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Panel/ContentWindow/ViewportPanel/VSplitContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 9 )
+
+[node name="Label" type="Label" parent="Panel/ContentWindow/ViewportPanel/VSplitContainer/TabContainer/Panel"]
+anchor_left = 0.223558
+anchor_top = 0.199546
+anchor_right = 0.637019
+anchor_bottom = 0.451247
+custom_fonts/font = SubResource( 10 )
+text = "Getiing started"
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label2" type="Label" parent="Panel/ContentWindow/ViewportPanel/VSplitContainer/TabContainer/Panel"]
+anchor_left = 0.223558
+anchor_top = 0.417234
+anchor_right = 0.637019
+anchor_bottom = 0.773243
+custom_fonts/font = SubResource( 11 )
+text = "Your own code editor.
+You can personalize theme.
+Open multiple files.
+Open any folder
+Find out more about VGCode"
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button" type="Button" parent="Panel/ContentWindow/ViewportPanel/VSplitContainer/TabContainer/Panel"]
+anchor_left = 0.551769
+anchor_top = 0.655884
+anchor_right = 0.651529
+anchor_bottom = 0.701236
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
+text = "Here."
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Terminal" type="TextEdit" parent="Panel/ContentWindow/ViewportPanel/VSplitContainer"]
 margin_top = 477.0
 margin_right = 827.0
 margin_bottom = 545.0
-custom_styles/normal = SubResource( 17 )
+custom_styles/normal = SubResource( 18 )
 text = "c:/user/test"
 syntax_highlighting = true
 fold_gutter = true
@@ -385,7 +417,7 @@ virtual_keyboard_enabled = false
 anchor_right = 1.0
 margin_bottom = 30.0
 mouse_default_cursor_shape = 13
-custom_styles/panel = SubResource( 18 )
+custom_styles/panel = SubResource( 19 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -543,7 +575,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -25.0
-custom_styles/panel = SubResource( 19 )
+custom_styles/panel = SubResource( 20 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

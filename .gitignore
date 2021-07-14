@@ -1,5 +1,5 @@
 # Plugin Specific ignores
-
+builds
 scn/
 override.cfg
 
