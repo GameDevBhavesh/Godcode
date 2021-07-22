@@ -29,6 +29,10 @@ FileData="*res://FileData.gd"
 
 window/dpi/allow_hidpi=true
 
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/folder_node/plugin.cfg", "res://addons/terminal/plugin.cfg" )
+
 [global]
 
 border=true

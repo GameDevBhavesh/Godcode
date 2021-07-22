@@ -127,6 +127,10 @@ highlight_all_occurrences = true
 override_selected_font_color = true
 smooth_scrolling = true
 hiding_enabled = true
+minimap_draw = true
+caret_block_mode = true
+caret_blink = true
+caret_blink_speed = 0.92
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

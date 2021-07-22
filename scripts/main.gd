@@ -27,7 +27,7 @@ func _on_FolderDialog_dir_selected(dir):
 		
 		var file_name = folder.get_next()
 		var index=0;
-		
+	
 		while file_name != "":
 			if folder.current_is_dir():
 				print("Found directory: " + file_name)
